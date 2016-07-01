@@ -1,0 +1,323 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		_LinkFileRef_AlchemyDesign_via_AlchemyDesignTestSuite /* AlchemyDesign.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_AlchemyDesign" /* AlchemyDesign.framework */; };
+		__src_cc_ref_Sources/AlchemyDesign.swift /* AlchemyDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/AlchemyDesign.swift /* AlchemyDesign.swift */; };
+		__src_cc_ref_Tests/AlchemyDesign/AlchemyDesignTests.swift /* AlchemyDesignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Tests/AlchemyDesign/AlchemyDesignTests.swift /* AlchemyDesignTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		837310791D26B0C60003F9C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = __RootObject_ /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "______Target_AlchemyDesign";
+			remoteInfo = AlchemyDesign;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8373107A1D26B1090003F9C6 /* Demo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Demo.playground; sourceTree = "<group>"; };
+		8373107B1D26B1090003F9C6 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		8373107C1D26B1090003F9C6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		__PBXFileRef_AlchemyDesign.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Project.xcconfig; path = AlchemyDesign.xcodeproj/Configs/Project.xcconfig; sourceTree = "<group>"; };
+		__PBXFileRef_AlchemyDesignTestSuite_Info.plist /* AlchemyDesignTestSuite_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = AlchemyDesignTestSuite_Info.plist; path = AlchemyDesign.xcodeproj/AlchemyDesignTestSuite_Info.plist; sourceTree = SOURCE_ROOT; };
+		__PBXFileRef_AlchemyDesign_Info.plist /* AlchemyDesign_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = AlchemyDesign_Info.plist; path = AlchemyDesign.xcodeproj/AlchemyDesign_Info.plist; sourceTree = SOURCE_ROOT; };
+		__PBXFileRef_Package.swift /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Sources/AlchemyDesign.swift /* AlchemyDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlchemyDesign.swift; path = Sources/AlchemyDesign.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Tests/AlchemyDesign/AlchemyDesignTests.swift /* AlchemyDesignTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlchemyDesignTests.swift; sourceTree = "<group>"; };
+		"_____Product_AlchemyDesign" /* AlchemyDesign.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlchemyDesign.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"_____Product_AlchemyDesignTestSuite" /* AlchemyDesignTestSuite.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlchemyDesignTestSuite.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		"___LinkPhase_AlchemyDesign" /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		"___LinkPhase_AlchemyDesignTestSuite" /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				_LinkFileRef_AlchemyDesign_via_AlchemyDesignTestSuite /* AlchemyDesign.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8373107F1D26B2130003F9C6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_AlchemyDesign_Info.plist /* AlchemyDesign_Info.plist */,
+				__PBXFileRef_AlchemyDesignTestSuite_Info.plist /* AlchemyDesignTestSuite_Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		TestProducts_ /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				"_____Product_AlchemyDesignTestSuite" /* AlchemyDesignTestSuite.xctest */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		"___RootGroup_" = {
+			isa = PBXGroup;
+			children = (
+				8373107B1D26B1090003F9C6 /* LICENSE.md */,
+				8373107C1D26B1090003F9C6 /* README.md */,
+				__PBXFileRef_Package.swift /* Package.swift */,
+				8373107A1D26B1090003F9C6 /* Demo.playground */,
+				"_____Configs_" /* Configs */,
+				"_____Sources_" /* Sources */,
+				8373107F1D26B2130003F9C6 /* Supporting Files */,
+				"_______Tests_" /* Tests */,
+				"____Products_" /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		"____Products_" /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				TestProducts_ /* Tests */,
+				"_____Product_AlchemyDesign" /* AlchemyDesign.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		"_____Configs_" /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_AlchemyDesign.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */,
+			);
+			name = Configs;
+			sourceTree = "<group>";
+		};
+		"_____Sources_" /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Sources/AlchemyDesign.swift /* AlchemyDesign.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		"_______Group_AlchemyDesignTestSuite" /* AlchemyDesignTestSuite */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Tests/AlchemyDesign/AlchemyDesignTests.swift /* AlchemyDesignTests.swift */,
+			);
+			name = AlchemyDesignTestSuite;
+			path = Tests/AlchemyDesign;
+			sourceTree = "<group>";
+		};
+		"_______Tests_" /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				"_______Group_AlchemyDesignTestSuite" /* AlchemyDesignTestSuite */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"______Target_AlchemyDesign" /* AlchemyDesign */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = "_______Confs_AlchemyDesign" /* Build configuration list for PBXNativeTarget "AlchemyDesign" */;
+			buildPhases = (
+				CompilePhase_AlchemyDesign /* Sources */,
+				"___LinkPhase_AlchemyDesign" /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlchemyDesign;
+			productName = AlchemyDesign;
+			productReference = "_____Product_AlchemyDesign" /* AlchemyDesign.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"______Target_AlchemyDesignTestSuite" /* AlchemyDesignTestSuite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = "_______Confs_AlchemyDesignTestSuite" /* Build configuration list for PBXNativeTarget "AlchemyDesignTestSuite" */;
+			buildPhases = (
+				CompilePhase_AlchemyDesignTestSuite /* Sources */,
+				"___LinkPhase_AlchemyDesignTestSuite" /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				__Dependency_AlchemyDesign /* PBXTargetDependency */,
+			);
+			name = AlchemyDesignTestSuite;
+			productName = AlchemyDesignTestSuite;
+			productReference = "_____Product_AlchemyDesignTestSuite" /* AlchemyDesignTestSuite.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		__RootObject_ /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = "___RootConfs_" /* Build configuration list for PBXProject "AlchemyDesign" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = "___RootGroup_";
+			productRefGroup = "____Products_" /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"______Target_AlchemyDesign" /* AlchemyDesign */,
+				"______Target_AlchemyDesignTestSuite" /* AlchemyDesignTestSuite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CompilePhase_AlchemyDesign /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				__src_cc_ref_Sources/AlchemyDesign.swift /* AlchemyDesign.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CompilePhase_AlchemyDesignTestSuite /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				__src_cc_ref_Tests/AlchemyDesign/AlchemyDesignTests.swift /* AlchemyDesignTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		__Dependency_AlchemyDesign /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "______Target_AlchemyDesign" /* AlchemyDesign */;
+			targetProxy = 837310791D26B0C60003F9C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		_ReleaseConf_AlchemyDesign /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = AlchemyDesign.xcodeproj/AlchemyDesign_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+			};
+			name = Release;
+		};
+		_ReleaseConf_AlchemyDesignTestSuite /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = AlchemyDesign.xcodeproj/AlchemyDesignTestSuite_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		"___DebugConf_AlchemyDesign" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = AlchemyDesign.xcodeproj/AlchemyDesign_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		"___DebugConf_AlchemyDesignTestSuite" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = AlchemyDesign.xcodeproj/AlchemyDesignTestSuite_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		"_____Release_" /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_AlchemyDesign.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		"_______Debug_" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_AlchemyDesign.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		"___RootConfs_" /* Build configuration list for PBXProject "AlchemyDesign" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"_______Debug_" /* Debug */,
+				"_____Release_" /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		"_______Confs_AlchemyDesign" /* Build configuration list for PBXNativeTarget "AlchemyDesign" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"___DebugConf_AlchemyDesign" /* Debug */,
+				_ReleaseConf_AlchemyDesign /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		"_______Confs_AlchemyDesignTestSuite" /* Build configuration list for PBXNativeTarget "AlchemyDesignTestSuite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"___DebugConf_AlchemyDesignTestSuite" /* Debug */,
+				_ReleaseConf_AlchemyDesignTestSuite /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = __RootObject_ /* Project object */;
+}
