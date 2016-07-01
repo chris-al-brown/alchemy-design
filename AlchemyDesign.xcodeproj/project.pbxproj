@@ -273,7 +273,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = __PBXFileRef_AlchemyDesign.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 0.1.0;
+				CURRENT_PROJECT_VERSION = 0.1.1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -282,7 +282,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = __PBXFileRef_AlchemyDesign.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 0.1.0;
+				CURRENT_PROJECT_VERSION = 0.1.1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
