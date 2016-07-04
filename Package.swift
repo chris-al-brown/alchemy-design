@@ -27,5 +27,9 @@
 import PackageDescription
 
 let package = Package(
-    name: "AlchemyDesign"
+    name: "AlchemyDesign",
+    dependencies: [
+        .Package(url: "https://github.com/chris-al-brown/alchemy-color", majorVersion: 0, minor: 2),
+        .Package(url: "https://github.com/chris-al-brown/alchemy-random", majorVersion: 0, minor: 2)
+    ]
 )

@@ -20,42 +20,14 @@
 // THE SOFTWARE.
 //
 // AlchemyDesign
-// AlchemyDesignTests.swift
-// 07/01/2016
+// Renderer.swift
+// 07/04/2016
 // -----------------------------------------------------------------------------
 
-import XCTest
-@testable import AlchemyDesign
+import Foundation
 
 /// ...
-class AlchemyDesignTests: XCTestCase {
+public protocol Renderer {}
 
-    /// ...
-    func testCircle() {
-        let x: Expression<Double> = Expression(0.0)
-        let y: Expression<Double> = Expression(.e)
-        let radius: Expression<Double> = Expression(.width)
-        var circle: Circle<Double>= Circle(x:x, y:y, radius:radius)
-        
-        var context = TestContext()
-        
-//        switch circle.radius {
-//        case .constant(_):
-//            break
-//        case .variable(let v):
-//            v.evaluate(inside:context)
-//        case .unary(let op, let exp):
-//            break
-//        case .binary(let op, let lhs, let rhs):
-//            break
-//        }
-        
-    }
-    
-    /// ...
-    static var allTests : [(String, (AlchemyDesignTests) -> () throws -> Void)] {
-        return [
-            ("testCircle", testCircle),
-        ]
-    }
-}
+/// ...
+public protocol TestRenderer: Renderer {}

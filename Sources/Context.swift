@@ -20,12 +20,41 @@
 // THE SOFTWARE.
 //
 // AlchemyDesign
-// AlchemyDesign.swift
-// 07/01/2016
+// Context.swift
+// 07/04/2016
 // -----------------------------------------------------------------------------
 
-/// ...
-struct AlchemyDesign {
+import Foundation
+import AlchemyRandom
 
-    var text = "Hello, World!"
+/// ...
+public protocol Context {
+    
+    /// ...
+    var height: Double { get }
+    
+    /// ...
+    var width: Double { get }
+}
+
+/// ...
+public final class TestContext: Context {
+    
+    /// ...
+    public init() {
+        self.rng = Xoroshiro128Plus(source:Arc4Random())
+    }
+
+    /// ...
+    public var height: Double {
+        return 480 * rng.nextDouble()
+    }
+
+    /// ...
+    public var width: Double {
+        return 640 * rng.nextDouble()
+    }
+    
+    /// ...
+    private var rng: Xoroshiro128Plus
 }

@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83BA3A4D1D2A545F00563731 /* AlchemyColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83BA3A3B1D2A540E00563731 /* AlchemyColor.framework */; };
+		83BA3A4E1D2A545F00563731 /* AlchemyRandom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83BA3A461D2A542E00563731 /* AlchemyRandom.framework */; };
+		83BA3A541D2A5DA300563731 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA3A531D2A5DA300563731 /* Constant.swift */; };
+		83BA3A581D2A62B800563731 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA3A571D2A62B800563731 /* Expression.swift */; };
+		83BA3A5A1D2A62E700563731 /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA3A591D2A62E700563731 /* Variable.swift */; };
+		83BA3A5C1D2AA05400563731 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA3A5B1D2AA05400563731 /* Context.swift */; };
+		83BA3A5E1D2AA12000563731 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA3A5D1D2AA12000563731 /* Operator.swift */; };
+		83BA3A601D2AA1D200563731 /* Primitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA3A5F1D2AA1D200563731 /* Primitive.swift */; };
+		83FAA1171D2AA90A00A75EDA /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FAA1161D2AA90A00A75EDA /* Geometry.swift */; };
+		83FAA11B1D2AA9F000A75EDA /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FAA11A1D2AA9F000A75EDA /* Renderer.swift */; };
 		_LinkFileRef_AlchemyDesign_via_AlchemyDesignTestSuite /* AlchemyDesign.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_AlchemyDesign" /* AlchemyDesign.framework */; };
-		__src_cc_ref_Sources/AlchemyDesign.swift /* AlchemyDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/AlchemyDesign.swift /* AlchemyDesign.swift */; };
 		__src_cc_ref_Tests/AlchemyDesign/AlchemyDesignTests.swift /* AlchemyDesignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Tests/AlchemyDesign/AlchemyDesignTests.swift /* AlchemyDesignTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,17 +29,68 @@
 			remoteGlobalIDString = "______Target_AlchemyDesign";
 			remoteInfo = AlchemyDesign;
 		};
+		83BA3A3A1D2A540E00563731 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83BA3A351D2A540E00563731 /* AlchemyColor.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "_____Product_AlchemyColor";
+			remoteInfo = AlchemyColor;
+		};
+		83BA3A3C1D2A540E00563731 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83BA3A351D2A540E00563731 /* AlchemyColor.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "_____Product_AlchemyColorTestSuite";
+			remoteInfo = AlchemyColorTestSuite;
+		};
+		83BA3A451D2A542E00563731 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83BA3A401D2A542E00563731 /* AlchemyRandom.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "_____Product_AlchemyRandom";
+			remoteInfo = AlchemyRandom;
+		};
+		83BA3A471D2A542E00563731 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83BA3A401D2A542E00563731 /* AlchemyRandom.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "_____Product_AlchemyRandomTestSuite";
+			remoteInfo = AlchemyRandomTestSuite;
+		};
+		83BA3A491D2A545800563731 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83BA3A351D2A540E00563731 /* AlchemyColor.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = "______Target_AlchemyColor";
+			remoteInfo = AlchemyColor;
+		};
+		83BA3A4B1D2A545B00563731 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83BA3A401D2A542E00563731 /* AlchemyRandom.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = "______Target_AlchemyRandom";
+			remoteInfo = AlchemyRandom;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8373107A1D26B1090003F9C6 /* Demo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Demo.playground; sourceTree = "<group>"; };
 		8373107B1D26B1090003F9C6 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		8373107C1D26B1090003F9C6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		83BA3A351D2A540E00563731 /* AlchemyColor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AlchemyColor.xcodeproj; path = "Packages/AlchemyColor-0.2.0/AlchemyColor.xcodeproj"; sourceTree = "<group>"; };
+		83BA3A401D2A542E00563731 /* AlchemyRandom.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AlchemyRandom.xcodeproj; path = "Packages/AlchemyRandom-0.2.0/AlchemyRandom.xcodeproj"; sourceTree = "<group>"; };
+		83BA3A531D2A5DA300563731 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = Sources/Constant.swift; sourceTree = "<group>"; };
+		83BA3A571D2A62B800563731 /* Expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Sources/Expression.swift; sourceTree = "<group>"; };
+		83BA3A591D2A62E700563731 /* Variable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Variable.swift; path = Sources/Variable.swift; sourceTree = "<group>"; };
+		83BA3A5B1D2AA05400563731 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Context.swift; path = Sources/Context.swift; sourceTree = "<group>"; };
+		83BA3A5D1D2AA12000563731 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operator.swift; path = Sources/Operator.swift; sourceTree = "<group>"; };
+		83BA3A5F1D2AA1D200563731 /* Primitive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Primitive.swift; path = Sources/Primitive.swift; sourceTree = "<group>"; };
+		83FAA1161D2AA90A00A75EDA /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Geometry.swift; path = Sources/Geometry.swift; sourceTree = "<group>"; };
+		83FAA11A1D2AA9F000A75EDA /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Renderer.swift; path = Sources/Renderer.swift; sourceTree = "<group>"; };
 		__PBXFileRef_AlchemyDesign.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Project.xcconfig; path = AlchemyDesign.xcodeproj/Configs/Project.xcconfig; sourceTree = "<group>"; };
 		__PBXFileRef_AlchemyDesignTestSuite_Info.plist /* AlchemyDesignTestSuite_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = AlchemyDesignTestSuite_Info.plist; path = AlchemyDesign.xcodeproj/AlchemyDesignTestSuite_Info.plist; sourceTree = SOURCE_ROOT; };
 		__PBXFileRef_AlchemyDesign_Info.plist /* AlchemyDesign_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = AlchemyDesign_Info.plist; path = AlchemyDesign.xcodeproj/AlchemyDesign_Info.plist; sourceTree = SOURCE_ROOT; };
 		__PBXFileRef_Package.swift /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		__PBXFileRef_Sources/AlchemyDesign.swift /* AlchemyDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlchemyDesign.swift; path = Sources/AlchemyDesign.swift; sourceTree = "<group>"; };
 		__PBXFileRef_Tests/AlchemyDesign/AlchemyDesignTests.swift /* AlchemyDesignTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlchemyDesignTests.swift; sourceTree = "<group>"; };
 		"_____Product_AlchemyDesign" /* AlchemyDesign.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlchemyDesign.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"_____Product_AlchemyDesignTestSuite" /* AlchemyDesignTestSuite.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlchemyDesignTestSuite.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +101,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
+				83BA3A4D1D2A545F00563731 /* AlchemyColor.framework in Frameworks */,
+				83BA3A4E1D2A545F00563731 /* AlchemyRandom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +126,49 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		83BA3A341D2A540100563731 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				83BA3A3E1D2A541400563731 /* alchemy-color */,
+				83BA3A3F1D2A541D00563731 /* alchemy-random */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		83BA3A361D2A540E00563731 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83BA3A3B1D2A540E00563731 /* AlchemyColor.framework */,
+				83BA3A3D1D2A540E00563731 /* AlchemyColorTestSuite.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83BA3A3E1D2A541400563731 /* alchemy-color */ = {
+			isa = PBXGroup;
+			children = (
+				83BA3A351D2A540E00563731 /* AlchemyColor.xcodeproj */,
+			);
+			name = "alchemy-color";
+			sourceTree = "<group>";
+		};
+		83BA3A3F1D2A541D00563731 /* alchemy-random */ = {
+			isa = PBXGroup;
+			children = (
+				83BA3A401D2A542E00563731 /* AlchemyRandom.xcodeproj */,
+			);
+			name = "alchemy-random";
+			sourceTree = "<group>";
+		};
+		83BA3A411D2A542E00563731 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83BA3A461D2A542E00563731 /* AlchemyRandom.framework */,
+				83BA3A481D2A542E00563731 /* AlchemyRandomTestSuite.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		TestProducts_ /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +185,7 @@
 				__PBXFileRef_Package.swift /* Package.swift */,
 				8373107A1D26B1090003F9C6 /* Demo.playground */,
 				"_____Configs_" /* Configs */,
+				83BA3A341D2A540100563731 /* Packages */,
 				"_____Sources_" /* Sources */,
 				8373107F1D26B2130003F9C6 /* Supporting Files */,
 				"_______Tests_" /* Tests */,
@@ -107,7 +213,14 @@
 		"_____Sources_" /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				__PBXFileRef_Sources/AlchemyDesign.swift /* AlchemyDesign.swift */,
+				83BA3A531D2A5DA300563731 /* Constant.swift */,
+				83BA3A5B1D2AA05400563731 /* Context.swift */,
+				83BA3A571D2A62B800563731 /* Expression.swift */,
+				83FAA1161D2AA90A00A75EDA /* Geometry.swift */,
+				83BA3A5D1D2AA12000563731 /* Operator.swift */,
+				83BA3A5F1D2AA1D200563731 /* Primitive.swift */,
+				83FAA11A1D2AA9F000A75EDA /* Renderer.swift */,
+				83BA3A591D2A62E700563731 /* Variable.swift */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -142,6 +255,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				83BA3A4C1D2A545B00563731 /* PBXTargetDependency */,
+				83BA3A4A1D2A545800563731 /* PBXTargetDependency */,
 			);
 			name = AlchemyDesign;
 			productName = AlchemyDesign;
@@ -183,6 +298,16 @@
 			mainGroup = "___RootGroup_";
 			productRefGroup = "____Products_" /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 83BA3A361D2A540E00563731 /* Products */;
+					ProjectRef = 83BA3A351D2A540E00563731 /* AlchemyColor.xcodeproj */;
+				},
+				{
+					ProductGroup = 83BA3A411D2A542E00563731 /* Products */;
+					ProjectRef = 83BA3A401D2A542E00563731 /* AlchemyRandom.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				"______Target_AlchemyDesign" /* AlchemyDesign */,
@@ -191,12 +316,50 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		83BA3A3B1D2A540E00563731 /* AlchemyColor.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AlchemyColor.framework;
+			remoteRef = 83BA3A3A1D2A540E00563731 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		83BA3A3D1D2A540E00563731 /* AlchemyColorTestSuite.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = file;
+			path = AlchemyColorTestSuite.xctest;
+			remoteRef = 83BA3A3C1D2A540E00563731 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		83BA3A461D2A542E00563731 /* AlchemyRandom.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AlchemyRandom.framework;
+			remoteRef = 83BA3A451D2A542E00563731 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		83BA3A481D2A542E00563731 /* AlchemyRandomTestSuite.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlchemyRandomTestSuite.xctest;
+			remoteRef = 83BA3A471D2A542E00563731 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CompilePhase_AlchemyDesign /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				__src_cc_ref_Sources/AlchemyDesign.swift /* AlchemyDesign.swift in Sources */,
+				83FAA11B1D2AA9F000A75EDA /* Renderer.swift in Sources */,
+				83BA3A541D2A5DA300563731 /* Constant.swift in Sources */,
+				83FAA1171D2AA90A00A75EDA /* Geometry.swift in Sources */,
+				83BA3A601D2AA1D200563731 /* Primitive.swift in Sources */,
+				83BA3A5C1D2AA05400563731 /* Context.swift in Sources */,
+				83BA3A5E1D2AA12000563731 /* Operator.swift in Sources */,
+				83BA3A5A1D2A62E700563731 /* Variable.swift in Sources */,
+				83BA3A581D2A62B800563731 /* Expression.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +374,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		83BA3A4A1D2A545800563731 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AlchemyColor;
+			targetProxy = 83BA3A491D2A545800563731 /* PBXContainerItemProxy */;
+		};
+		83BA3A4C1D2A545B00563731 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AlchemyRandom;
+			targetProxy = 83BA3A4B1D2A545B00563731 /* PBXContainerItemProxy */;
+		};
 		__Dependency_AlchemyDesign /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "______Target_AlchemyDesign" /* AlchemyDesign */;

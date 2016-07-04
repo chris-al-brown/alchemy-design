@@ -20,42 +20,39 @@
 // THE SOFTWARE.
 //
 // AlchemyDesign
-// AlchemyDesignTests.swift
-// 07/01/2016
+// Geometry.swift
+// 07/04/2016
 // -----------------------------------------------------------------------------
 
-import XCTest
-@testable import AlchemyDesign
+import Foundation
 
 /// ...
-class AlchemyDesignTests: XCTestCase {
-
-    /// ...
-    func testCircle() {
-        let x: Expression<Double> = Expression(0.0)
-        let y: Expression<Double> = Expression(.e)
-        let radius: Expression<Double> = Expression(.width)
-        var circle: Circle<Double>= Circle(x:x, y:y, radius:radius)
-        
-        var context = TestContext()
-        
-//        switch circle.radius {
-//        case .constant(_):
-//            break
-//        case .variable(let v):
-//            v.evaluate(inside:context)
-//        case .unary(let op, let exp):
-//            break
-//        case .binary(let op, let lhs, let rhs):
-//            break
-//        }
-        
-    }
+public struct Circle<T: Primitive> {
     
     /// ...
-    static var allTests : [(String, (AlchemyDesignTests) -> () throws -> Void)] {
-        return [
-            ("testCircle", testCircle),
-        ]
+    public var x: Expression<T>
+    
+    /// ...
+    public var y: Expression<T>
+    
+    /// ...
+    public var radius: Expression<T>
+    
+    //    /// ...
+    //    public var strokeWidth: T
+    //
+    //    /// ...
+    //    public var stroke: RGBAColor<UInt8>
+    //
+    //    /// ...
+    //    public var fill: RGBAColor<UInt8>
+    
+}
+
+/// ...
+extension Circle: CustomStringConvertible {
+    
+    public var description: String {
+        return "Circle<\(T.self)>(x: \(x), y: \(y), radius: \(radius))"
     }
 }

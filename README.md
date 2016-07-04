@@ -25,7 +25,7 @@ AlchemyDesign is a Swift package for generative and inverse problem design
     - Language: **Swift 3.0**
 - OS X
     - Latest SDK: **macOS 10.12**
-    - Deployment Target: **OS X 10.10**
+    - Deployment Target: **macOS 10.10**
 
 ## Installation
 

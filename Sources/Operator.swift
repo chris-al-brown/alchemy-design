@@ -20,42 +20,75 @@
 // THE SOFTWARE.
 //
 // AlchemyDesign
-// AlchemyDesignTests.swift
-// 07/01/2016
+// Operator.swift
+// 07/04/2016
 // -----------------------------------------------------------------------------
 
-import XCTest
-@testable import AlchemyDesign
+import Foundation
 
 /// ...
-class AlchemyDesignTests: XCTestCase {
-
-    /// ...
-    func testCircle() {
-        let x: Expression<Double> = Expression(0.0)
-        let y: Expression<Double> = Expression(.e)
-        let radius: Expression<Double> = Expression(.width)
-        var circle: Circle<Double>= Circle(x:x, y:y, radius:radius)
-        
-        var context = TestContext()
-        
-//        switch circle.radius {
-//        case .constant(_):
-//            break
-//        case .variable(let v):
-//            v.evaluate(inside:context)
-//        case .unary(let op, let exp):
-//            break
-//        case .binary(let op, let lhs, let rhs):
-//            break
-//        }
-        
-    }
+public protocol BinaryOperatorProtocol {
     
     /// ...
-    static var allTests : [(String, (AlchemyDesignTests) -> () throws -> Void)] {
-        return [
-            ("testCircle", testCircle),
-        ]
+    associatedtype RawValue
+    
+    /// ...
+    func evaluate(lhs: RawValue, rhs: RawValue) -> RawValue
+}
+
+/// ...
+public protocol UnaryOperatorProtocol {
+
+    /// ...
+    associatedtype RawValue
+    
+    /// ...
+    func evaluate(argument: RawValue) -> RawValue
+}
+
+/// ...
+public enum FloatingPointBinaryOperator: BinaryOperatorProtocol {
+    
+    /// ...
+    public typealias RawValue = Double
+    
+    /// ...
+    case add
+    
+    /// ...
+    public func evaluate(lhs: RawValue, rhs: RawValue) -> RawValue {
+        switch self {
+        case .add:
+            return lhs + rhs
+        }
     }
 }
+
+/// ...
+public enum FloatingPointUnaryOperator: UnaryOperatorProtocol {
+    
+    /// ...
+    public typealias RawValue = Double
+
+    /// ...
+    case sin
+    
+    /// ...
+    public func evaluate(argument: RawValue) -> RawValue {
+        switch self {
+        case .sin:
+            return Darwin.sin(argument)
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
