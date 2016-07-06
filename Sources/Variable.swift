@@ -27,20 +27,20 @@
 import Foundation
 
 /// ...
-public protocol VariableProtocol {
+public protocol Variable {
     
     /// ...
-    associatedtype RawValue
+    associatedtype Value
     
     /// ...
-    func evaluate(inside context: Context) -> RawValue
+    func evaluate(inside context: Context) -> Value
 }
 
 /// ...
-public enum FloatingPointVariable: VariableProtocol {
+public enum DoubleVariable: Variable {
     
     /// ...
-    public typealias RawValue = Double
+    public typealias Value = Double
     
     /// ...
     case height
@@ -49,7 +49,7 @@ public enum FloatingPointVariable: VariableProtocol {
     case width
     
     /// ...
-    public func evaluate(inside context: Context) -> RawValue {
+    public func evaluate(inside context: Context) -> Value {
         switch self {
         case .height:
             return context.height
@@ -60,8 +60,8 @@ public enum FloatingPointVariable: VariableProtocol {
 }
 
 /// ...
-extension FloatingPointVariable: CustomStringConvertible {
-    
+extension DoubleVariable: CustomStringConvertible {
+
     public var description: String {
         switch self {
         case .height:
@@ -71,6 +71,62 @@ extension FloatingPointVariable: CustomStringConvertible {
         }
     }
 }
+
+
+
+///// ...
+//public protocol VariableProtocol {
+//    
+//    /// ...
+//    associatedtype RawValue
+//    
+//    /// ...
+//    init<RNG: RandomNumberGenerator>(random: inout RNG)
+//
+//    /// ...
+//    func evaluate(inside context: Context) -> RawValue
+//}
+//
+///// ...
+//public enum FloatingPointVariable: VariableProtocol {
+//    
+//    /// ...
+//    public typealias RawValue = Double
+//    
+//    /// ...
+//    case height
+//    
+//    /// ...
+//    case width
+//    
+//    /// ...
+//    public init<RNG: RandomNumberGenerator>(random: inout RNG) {
+//        self = random.nextDouble() < 0.5 ? .height : .width
+//    }
+//
+//    /// ...
+//    public func evaluate(inside context: Context) -> RawValue {
+//        switch self {
+//        case .height:
+//            return context.height
+//        case .width:
+//            return context.width
+//        }
+//    }
+//}
+//
+///// ...
+//extension FloatingPointVariable: CustomStringConvertible {
+//    
+//    public var description: String {
+//        switch self {
+//        case .height:
+//            return "height"
+//        case .width:
+//            return "width"
+//        }
+//    }
+//}
 
 ///// ...
 //public enum BooleanVariable {

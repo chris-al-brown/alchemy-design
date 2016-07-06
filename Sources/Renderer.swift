@@ -27,7 +27,8 @@
 import Foundation
 
 /// ...
-public protocol Renderer {}
+public protocol Renderer {
 
-/// ...
-public protocol TestRenderer: Renderer {}
+    /// ...
+    func render(circle: Circle, inside context: Context)
+}

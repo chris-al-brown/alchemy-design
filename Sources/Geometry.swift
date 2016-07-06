@@ -27,17 +27,26 @@
 import Foundation
 
 /// ...
-public struct Circle<T: Primitive> {
+public struct Circle {
+
+    /// ...
+    public typealias X = Expression<Double, HorizontalConstraint, DoubleConstant, DoubleVariable, DoubleUnaryOperator, DoubleBinaryOperator>
     
     /// ...
-    public var x: Expression<T>
+    public typealias Y = Expression<Double, VerticalConstraint, DoubleConstant, DoubleVariable, DoubleUnaryOperator, DoubleBinaryOperator>
+
+    /// ...
+    public typealias Radius = Expression<Double, LengthConstraint, DoubleConstant, DoubleVariable, DoubleUnaryOperator, DoubleBinaryOperator>
     
     /// ...
-    public var y: Expression<T>
-    
+    public var x: X
+
     /// ...
-    public var radius: Expression<T>
-    
+    public var y: Y
+
+    /// ...
+    public var radius: Radius
+
     //    /// ...
     //    public var strokeWidth: T
     //
@@ -46,13 +55,12 @@ public struct Circle<T: Primitive> {
     //
     //    /// ...
     //    public var fill: RGBAColor<UInt8>
-    
 }
 
 /// ...
 extension Circle: CustomStringConvertible {
-    
+
     public var description: String {
-        return "Circle<\(T.self)>(x: \(x), y: \(y), radius: \(radius))"
+        return "Circle(x = \(x), y = \(y), radius = \(radius))"
     }
 }

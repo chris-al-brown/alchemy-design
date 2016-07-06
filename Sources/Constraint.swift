@@ -20,40 +20,54 @@
 // THE SOFTWARE.
 //
 // AlchemyDesign
-// Primitive.swift
-// 07/04/2016
+// Constraint.swift
+// 07/06/2013
 // -----------------------------------------------------------------------------
 
 import Foundation
 
 /// ...
-public protocol Primitive {
+public protocol Constraint {
     
     /// ...
-    associatedtype Constant: ConstantProtocol
+    associatedtype Value
     
     /// ...
-    associatedtype Variable: VariableProtocol
-    
-    /// ...
-    associatedtype UnaryOperator: UnaryOperatorProtocol
-
-    /// ...
-    associatedtype BinaryOperator: BinaryOperatorProtocol
+    static func constrain(input: Value, inside context: Context) -> Value
 }
 
 /// ...
-extension Double: Primitive {
+public struct HorizontalConstraint: Constraint {
     
     /// ...
-    public typealias Constant = FloatingPointConstant
+    public typealias Value = Double
     
     /// ...
-    public typealias Variable = FloatingPointVariable
+    public static func constrain(input: Value, inside context: Context) -> Value {
+        return min(max(input, context.minimumX), context.maximumX)
+    }
+}
+
+/// ...
+public struct LengthConstraint: Constraint {
     
     /// ...
-    public typealias UnaryOperator = FloatingPointUnaryOperator
+    public typealias Value = Double
     
     /// ...
-    public typealias BinaryOperator = FloatingPointBinaryOperator
+    public static func constrain(input: Value, inside context: Context) -> Value {
+        return max(input, context.minimumLength)
+    }
+}
+
+/// ...
+public struct VerticalConstraint: Constraint {
+    
+    /// ...
+    public typealias Value = Double
+    
+    /// ...
+    public static func constrain(input: Value, inside context: Context) -> Value {
+        return min(max(input, context.minimumY), context.maximumY)
+    }
 }

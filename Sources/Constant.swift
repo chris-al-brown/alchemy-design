@@ -27,23 +27,20 @@
 import Foundation
 
 /// ...
-public protocol ConstantProtocol {
+public protocol Constant {
     
     /// ...
-    associatedtype RawValue
+    associatedtype Value
     
     /// ...
-    init(_ value: RawValue)
-
-    /// ...
-    var rawValue: RawValue { get }
+    var value: Value { get }
 }
 
 /// ...
-public enum FloatingPointConstant: ConstantProtocol {
+public enum DoubleConstant: Constant {
     
     /// ...
-    public typealias RawValue = Double
+    public typealias Value = Double
     
     /// ...
     case e
@@ -58,9 +55,6 @@ public enum FloatingPointConstant: ConstantProtocol {
     case quarterPi
     
     /// ...
-    case rawValue(RawValue)
-    
-    /// ...
     case sqrt2
     
     /// ...
@@ -68,14 +62,9 @@ public enum FloatingPointConstant: ConstantProtocol {
     
     /// ...
     case twoPi
-    
+
     /// ...
-    public init(_ value: RawValue) {
-        self = .rawValue(value)
-    }
-    
-    /// ...
-    public var rawValue: RawValue {
+    public var value: Value {
         switch self {
         case .e:
             return M_E
@@ -85,8 +74,6 @@ public enum FloatingPointConstant: ConstantProtocol {
             return .pi
         case .quarterPi:
             return .pi / 4
-        case rawValue(let value):
-            return value
         case .sqrt2:
             return sqrt(2)
         case .sqrt3:
@@ -98,8 +85,8 @@ public enum FloatingPointConstant: ConstantProtocol {
 }
 
 /// ...
-extension FloatingPointConstant: CustomStringConvertible {
-    
+extension DoubleConstant: CustomStringConvertible {
+
     public var description: String {
         switch self {
         case .e:
@@ -110,8 +97,6 @@ extension FloatingPointConstant: CustomStringConvertible {
             return "π"
         case .quarterPi:
             return "(π/4)"
-        case rawValue(let value):
-            return String(value)
         case .sqrt2:
             return "√(2)"
         case .sqrt3:
@@ -121,6 +106,128 @@ extension FloatingPointConstant: CustomStringConvertible {
         }
     }
 }
+
+
+///// ...
+//public protocol ConstantProtocol {
+//    
+//    /// ...
+//    associatedtype RawValue
+//    
+//    /// ...
+//    init(_ value: RawValue)
+//    
+//    /// ...
+//    init<RNG: RandomNumberGenerator>(random: inout RNG)
+//
+//    /// ...
+//    var rawValue: RawValue { get }
+//}
+//
+///// ...
+//public enum FloatingPointConstant: ConstantProtocol {
+//    
+//    /// ...
+//    public typealias RawValue = Double
+//    
+//    /// ...
+//    case e
+//    
+//    /// ...
+//    case halfPi
+//    
+//    /// ...
+//    case pi
+//    
+//    /// ...
+//    case quarterPi
+//    
+//    /// ...
+//    case rawValue(RawValue)
+//    
+//    /// ...
+//    case sqrt2
+//    
+//    /// ...
+//    case sqrt3
+//    
+//    /// ...
+//    case twoPi
+//    
+//    /// ...
+//    public init(_ value: RawValue) {
+//        self = .rawValue(value)
+//    }
+//    
+//    /// ...
+//    public init<RNG: RandomNumberGenerator>(random: inout RNG) {
+//        switch random.nextInt(lessThan:7) {
+//        case 0:
+//            self = .e
+//        case 1:
+//            self = .halfPi
+//        case 2:
+//            self = .pi
+//        case 3:
+//            self = .quarterPi
+//        case 4:
+//            self = .rawValue(random.nextDouble())
+//        case 5:
+//            self = .sqrt2
+//        case 6:
+//            self = .sqrt3
+//        default:
+//            self = .e
+//        }
+//    }
+//
+//    /// ...
+//    public var rawValue: RawValue {
+//        switch self {
+//        case .e:
+//            return M_E
+//        case .halfPi:
+//            return .pi / 2
+//        case .pi:
+//            return .pi
+//        case .quarterPi:
+//            return .pi / 4
+//        case rawValue(let value):
+//            return value
+//        case .sqrt2:
+//            return sqrt(2)
+//        case .sqrt3:
+//            return sqrt(3)
+//        case .twoPi:
+//            return 2 * .pi
+//        }
+//    }
+//}
+//
+///// ...
+//extension FloatingPointConstant: CustomStringConvertible {
+//    
+//    public var description: String {
+//        switch self {
+//        case .e:
+//            return "e"
+//        case .halfPi:
+//            return "(π/2)"
+//        case .pi:
+//            return "π"
+//        case .quarterPi:
+//            return "(π/4)"
+//        case rawValue(let value):
+//            return String(value)
+//        case .sqrt2:
+//            return "√(2)"
+//        case .sqrt3:
+//            return "√(3)"
+//        case .twoPi:
+//            return "2π"
+//        }
+//    }
+//}
 
 
 
