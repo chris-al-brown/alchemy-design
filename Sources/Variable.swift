@@ -27,21 +27,29 @@
 import Foundation
 
 /// ...
-public protocol Variable {
+public protocol Variable: Hashable {
     
     /// ...
     associatedtype Value
     
     /// ...
-    func evaluate(inside context: Context) -> Value
+    static var allVariables: Set<Self> { get }
+
+    /// ...
+    func evaluate<Ctx: Context>(inside context: Ctx) -> Value
 }
 
 /// ...
-public enum DoubleVariable: Variable {
+public enum FloatingPointVariable: Variable {
     
     /// ...
-    public typealias Value = Double
+    public typealias Value = FloatingPointType
     
+    /// ...
+    public static var allVariables: Set<FloatingPointVariable> {
+        return [.height, .width]
+    }
+
     /// ...
     case height
     
@@ -49,7 +57,7 @@ public enum DoubleVariable: Variable {
     case width
     
     /// ...
-    public func evaluate(inside context: Context) -> Value {
+    public func evaluate<Ctx: Context>(inside context: Ctx) -> Value {
         switch self {
         case .height:
             return context.height
@@ -60,7 +68,7 @@ public enum DoubleVariable: Variable {
 }
 
 /// ...
-extension DoubleVariable: CustomStringConvertible {
+extension FloatingPointVariable: CustomStringConvertible {
 
     public var description: String {
         switch self {
@@ -71,138 +79,3 @@ extension DoubleVariable: CustomStringConvertible {
         }
     }
 }
-
-
-
-///// ...
-//public protocol VariableProtocol {
-//    
-//    /// ...
-//    associatedtype RawValue
-//    
-//    /// ...
-//    init<RNG: RandomNumberGenerator>(random: inout RNG)
-//
-//    /// ...
-//    func evaluate(inside context: Context) -> RawValue
-//}
-//
-///// ...
-//public enum FloatingPointVariable: VariableProtocol {
-//    
-//    /// ...
-//    public typealias RawValue = Double
-//    
-//    /// ...
-//    case height
-//    
-//    /// ...
-//    case width
-//    
-//    /// ...
-//    public init<RNG: RandomNumberGenerator>(random: inout RNG) {
-//        self = random.nextDouble() < 0.5 ? .height : .width
-//    }
-//
-//    /// ...
-//    public func evaluate(inside context: Context) -> RawValue {
-//        switch self {
-//        case .height:
-//            return context.height
-//        case .width:
-//            return context.width
-//        }
-//    }
-//}
-//
-///// ...
-//extension FloatingPointVariable: CustomStringConvertible {
-//    
-//    public var description: String {
-//        switch self {
-//        case .height:
-//            return "height"
-//        case .width:
-//            return "width"
-//        }
-//    }
-//}
-
-///// ...
-//public enum BooleanVariable {
-//    
-//    /// ...
-//    case uniform
-//}
-//
-///// ...
-//extension BooleanVariable: CustomStringConvertible {
-//    
-//    public var description: String {
-//        switch self {
-//        case .uniform:
-//            return "uniform()"
-//        }
-//    }
-//}
-//
-///// ...
-//public enum FloatingVariable {
-//    
-//    /// ...
-//    case uniform(Double, Double)
-//    
-//    /// ...
-//    case x
-//    
-//    /// ...
-//    case y
-//}
-//
-///// ...
-//extension FloatingVariable: CustomStringConvertible {
-//    
-//    public var description: String {
-//        switch self {
-//        case .uniform(let min, let max):
-//            return "uniform(\(min), \(max))"
-//        case .x:
-//            return "x"
-//        case .y:
-//            return "y"
-//        }
-//    }
-//}
-//
-///// ...
-//public enum IntegerVariable {
-//    
-//    /// ...
-//    case depth
-//    
-//    /// ...
-//    case uniform(Int, Int)
-//    
-//    /// ...
-//    case xIndex
-//    
-//    /// ...
-//    case yIndex
-//}
-//
-///// ...
-//extension IntegerVariable: CustomStringConvertible {
-//    
-//    public var description: String {
-//        switch self {
-//        case .depth:
-//            return "depth"
-//        case .uniform(let min, let max):
-//            return "uniform(\(min), \(max))"
-//        case xIndex:
-//            return "xIndex"
-//        case yIndex:
-//            return "yIndex"
-//        }
-//    }
-//}

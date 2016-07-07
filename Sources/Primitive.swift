@@ -20,54 +20,86 @@
 // THE SOFTWARE.
 //
 // AlchemyDesign
-// Constraint.swift
-// 07/06/2013
+// Primitive.swift
+// 07/04/2016
 // -----------------------------------------------------------------------------
 
 import Foundation
 
 /// ...
-public protocol Constraint {
+public struct Circle {
     
     /// ...
-    associatedtype Value
+    public var x: FloatingPointExpression
     
     /// ...
-    static func constrain(input: Value, inside context: Context) -> Value
+    public var y: FloatingPointExpression
+    
+    /// ...
+    public var radius: FloatingPointExpression
+    
+    //    /// ...
+    //    public var strokeWidth: T
+    //
+    //    /// ...
+    //    public var stroke: RGBAColor<UInt8>
+    //
+    //    /// ...
+    //    public var fill: RGBAColor<UInt8>
 }
 
 /// ...
-public struct HorizontalConstraint: Constraint {
+extension Circle: CustomStringConvertible {
     
-    /// ...
-    public typealias Value = Double
-    
-    /// ...
-    public static func constrain(input: Value, inside context: Context) -> Value {
-        return min(max(input, context.minimumX), context.maximumX)
+    public var description: String {
+        return "Circle(x = \(x), y = \(y), radius = \(radius))"
     }
 }
 
 /// ...
-public struct LengthConstraint: Constraint {
+public struct Ellipse {
     
     /// ...
-    public typealias Value = Double
+    public var x: FloatingPointExpression
     
     /// ...
-    public static func constrain(input: Value, inside context: Context) -> Value {
-        return max(input, context.minimumLength)
+    public var y: FloatingPointExpression
+    
+    /// ...
+    public var radiusX: FloatingPointExpression
+    
+    /// ...
+    public var radiusY: FloatingPointExpression
+}
+
+/// ...
+extension Ellipse: CustomStringConvertible {
+    
+    public var description: String {
+        return "Ellipse(x = \(x), y = \(y), radiusX = \(radiusX), radiusY = \(radiusY))"
     }
 }
 
 /// ...
-public struct VerticalConstraint: Constraint {
+public enum Primitive {
     
     /// ...
-    public typealias Value = Double
-    
+    case circle(Circle)
+
     /// ...
-    public static func constrain(input: Value, inside context: Context) -> Value {
-        return min(max(input, context.minimumY), context.maximumY)
+    case ellipse(Ellipse)
+}
+
+/// ...
+extension Primitive: CustomStringConvertible {
+    
+    public var description: String {
+        switch self {
+        case .circle(let circle):
+            return circle.description
+        case .ellipse(let ellipse):
+            return ellipse.description
+        }
     }
 }
+

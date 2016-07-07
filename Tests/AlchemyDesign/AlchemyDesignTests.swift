@@ -29,80 +29,19 @@ import AlchemyRandom
 @testable import AlchemyDesign
 
 /// ...
-final class TestContext: Context {
-    
-    /// ...
-    init() {
-        var rng = Xoroshiro128Plus(source:Arc4Random())
-        self.width = 640 * rng.nextDouble()
-        self.height = 480 * rng.nextDouble()
-    }
-    
-    /// ...
-    var minimumLength: Double {
-        return 1.0
-    }
-    
-    /// ...
-    var maximumLength: Double {
-        return 10.0
-    }
-    
-    /// ...
-    var minimumX: Double {
-        return 0.0
-    }
-    
-    /// ...
-    var maximumX: Double {
-        return width
-    }
-    
-    /// ...
-    var minimumY: Double {
-        return 0.0
-    }
-    
-    /// ...
-    var maximumY: Double {
-        return height
-    }
-    
-    /// ...
-    let height: Double
-    
-    /// ...
-    let width: Double
-}
-
-/// ...
-final class TestRenderer: Renderer {
-    
-    /// ...
-    func render(circle: Circle, inside context: Context) {
-        let x = circle.x.evaluate(inside:context)
-        let y = circle.y.evaluate(inside:context)
-        let r = circle.radius.evaluate(inside:context)
-        print("render: \(circle)")
-        print("  x = \(x)")
-        print("  y = \(y)")
-        print("  radius = \(r)")
-    }
-}
-
-/// ...
 class AlchemyDesignTests: XCTestCase {
     
     /// ...
     func testCircle() {
-        let x: Circle.X = Circle.X(.width)
-        let y: Circle.Y = Circle.Y(-10.0)
-        let radius: Circle.Radius = Circle.Radius(-1000)
-        let circle = Circle(x:x, y:y, radius:radius)
-        let context = TestContext()
-        let renderer = TestRenderer()
-        renderer.render(circle:circle, inside:context)
+        let env = CoreEnvironment()
+        let circle = Circle(x:env.randomExpression(), y:env.randomExpression(), radius:env.randomExpression())
+        let ctx = CoreContext()
+        let renderer = PrintRenderer()
+        renderer.render(circle:circle, using:ctx)
     }
+    
+    /// ...
+    func textEllipse() {}
     
     /// ...
     static var allTests : [(String, (AlchemyDesignTests) -> () throws -> Void)] {

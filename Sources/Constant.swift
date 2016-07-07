@@ -27,21 +27,29 @@
 import Foundation
 
 /// ...
-public protocol Constant {
+public protocol Constant: Hashable {
     
     /// ...
     associatedtype Value
+    
+    /// ...
+    static var allConstants: Set<Self> { get }
     
     /// ...
     var value: Value { get }
 }
 
 /// ...
-public enum DoubleConstant: Constant {
+public enum FloatingPointConstant: Constant {
     
     /// ...
-    public typealias Value = Double
+    public typealias Value = FloatingPointType
     
+    /// ...
+    public static var allConstants: Set<FloatingPointConstant> {
+        return [.e, .halfPi, .pi, .quarterPi, .sqrt2, .sqrt3, .twoPi]
+    }
+
     /// ...
     case e
     
@@ -62,7 +70,7 @@ public enum DoubleConstant: Constant {
     
     /// ...
     case twoPi
-
+    
     /// ...
     public var value: Value {
         switch self {
@@ -85,8 +93,8 @@ public enum DoubleConstant: Constant {
 }
 
 /// ...
-extension DoubleConstant: CustomStringConvertible {
-
+extension FloatingPointConstant: CustomStringConvertible {
+    
     public var description: String {
         switch self {
         case .e:
@@ -106,245 +114,3 @@ extension DoubleConstant: CustomStringConvertible {
         }
     }
 }
-
-
-///// ...
-//public protocol ConstantProtocol {
-//    
-//    /// ...
-//    associatedtype RawValue
-//    
-//    /// ...
-//    init(_ value: RawValue)
-//    
-//    /// ...
-//    init<RNG: RandomNumberGenerator>(random: inout RNG)
-//
-//    /// ...
-//    var rawValue: RawValue { get }
-//}
-//
-///// ...
-//public enum FloatingPointConstant: ConstantProtocol {
-//    
-//    /// ...
-//    public typealias RawValue = Double
-//    
-//    /// ...
-//    case e
-//    
-//    /// ...
-//    case halfPi
-//    
-//    /// ...
-//    case pi
-//    
-//    /// ...
-//    case quarterPi
-//    
-//    /// ...
-//    case rawValue(RawValue)
-//    
-//    /// ...
-//    case sqrt2
-//    
-//    /// ...
-//    case sqrt3
-//    
-//    /// ...
-//    case twoPi
-//    
-//    /// ...
-//    public init(_ value: RawValue) {
-//        self = .rawValue(value)
-//    }
-//    
-//    /// ...
-//    public init<RNG: RandomNumberGenerator>(random: inout RNG) {
-//        switch random.nextInt(lessThan:7) {
-//        case 0:
-//            self = .e
-//        case 1:
-//            self = .halfPi
-//        case 2:
-//            self = .pi
-//        case 3:
-//            self = .quarterPi
-//        case 4:
-//            self = .rawValue(random.nextDouble())
-//        case 5:
-//            self = .sqrt2
-//        case 6:
-//            self = .sqrt3
-//        default:
-//            self = .e
-//        }
-//    }
-//
-//    /// ...
-//    public var rawValue: RawValue {
-//        switch self {
-//        case .e:
-//            return M_E
-//        case .halfPi:
-//            return .pi / 2
-//        case .pi:
-//            return .pi
-//        case .quarterPi:
-//            return .pi / 4
-//        case rawValue(let value):
-//            return value
-//        case .sqrt2:
-//            return sqrt(2)
-//        case .sqrt3:
-//            return sqrt(3)
-//        case .twoPi:
-//            return 2 * .pi
-//        }
-//    }
-//}
-//
-///// ...
-//extension FloatingPointConstant: CustomStringConvertible {
-//    
-//    public var description: String {
-//        switch self {
-//        case .e:
-//            return "e"
-//        case .halfPi:
-//            return "(π/2)"
-//        case .pi:
-//            return "π"
-//        case .quarterPi:
-//            return "(π/4)"
-//        case rawValue(let value):
-//            return String(value)
-//        case .sqrt2:
-//            return "√(2)"
-//        case .sqrt3:
-//            return "√(3)"
-//        case .twoPi:
-//            return "2π"
-//        }
-//    }
-//}
-
-
-
-
-///// ...
-//public enum BooleanConstant {
-//    
-//    /// ...
-//    case `true`
-//    
-//    /// ...
-//    case `false`
-//}
-//
-///// ...
-//extension BooleanConstant: CustomStringConvertible {
-//    
-//    public var description: String {
-//        switch self {
-//        case .true:
-//            return "true"
-//        case .false:
-//            return "false"
-//        }
-//    }
-//}
-//
-///// ...
-//extension BooleanConstant: BooleanLiteralConvertible {
-//    
-//    public init(booleanLiteral value: Bool) {
-//        self = value ? .true : .false
-//    }
-//}
-//
-///// ...
-//public enum FloatingConstant {
-//    
-//    /// ...
-//    case e
-//    
-//    /// ...
-//    case halfPi
-//    
-//    /// ...
-//    case height
-//    
-//    /// ...
-//    case pi
-//    
-//    /// ...
-//    case quarterPi
-//    
-//    /// ...
-//    case sqrt2
-//    
-//    /// ...
-//    case sqrt3
-//    
-//    /// ...
-//    case twoPi
-//    
-//    /// ...
-//    case width
-//}
-//
-///// ...
-//extension FloatingConstant: CustomStringConvertible {
-//    
-//    public var description: String {
-//        switch self {
-//        case .e:
-//            return "e"
-//        case .halfPi:
-//            return "(π/2)"
-//        case .height:
-//            return "height"
-//        case .pi:
-//            return "π"
-//        case .quarterPi:
-//            return "(π/4)"
-//        case .sqrt2:
-//            return "√(2)"
-//        case .sqrt3:
-//            return "√(3)"
-//        case .twoPi:
-//            return "2π"
-//        case .width:
-//            return "width"
-//        }
-//    }
-//}
-//
-///// ...
-//public enum IntegerConstant {
-//
-//    /// ...
-//    case height
-//
-//    /// ...
-//    case layerCount
-//    
-//    /// ...
-//    case width
-//}
-//
-///// ...
-//extension IntegerConstant: CustomStringConvertible {
-//    
-//    public var description: String {
-//        switch self {
-//        case .height:
-//            return "height"
-//        case .layerCount:
-//            return "layerCount"
-//        case .width:
-//            return "width"
-//        }
-//    }
-//}

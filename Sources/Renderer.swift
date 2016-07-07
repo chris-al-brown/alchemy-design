@@ -30,5 +30,43 @@ import Foundation
 public protocol Renderer {
 
     /// ...
-    func render(circle: Circle, inside context: Context)
+    func render<RenderContext: Context>(primitive: Primitive, using context: RenderContext)
+}
+
+/// ...
+public final class PrintRenderer: Renderer {
+    
+    /// ...
+    public func render<RenderContext: Context>(primitive: Primitive, using context: RenderContext) {
+        switch primitive {
+        case .circle(let circle):
+            render(circle:circle, using:context)
+        case .ellipse(let ellipse):
+            render(ellipse:ellipse, using:context)
+        }
+    }
+    
+    /// ...
+    public func render<RenderContext: Context>(circle: Circle, using context: RenderContext) {
+        let x = circle.x.evaluate(inside:context)
+        let y = circle.y.evaluate(inside:context)
+        let radius = circle.radius.evaluate(inside:context)
+        print("render: \(circle)")
+        print("  x = \(x)")
+        print("  y = \(y)")
+        print("  radius = \(radius)")
+    }
+    
+    /// ...
+    public func render<RenderContext: Context>(ellipse: Ellipse, using context: RenderContext) {
+        let x = ellipse.x.evaluate(inside:context)
+        let y = ellipse.y.evaluate(inside:context)
+        let radiusX = ellipse.radiusX.evaluate(inside:context)
+        let radiusY = ellipse.radiusY.evaluate(inside:context)
+        print("render: \(ellipse)")
+        print("  x = \(x)")
+        print("  y = \(y)")
+        print("  radiusX = \(radiusX)")
+        print("  radiusY = \(radiusY)")
+    }
 }

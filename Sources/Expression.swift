@@ -29,20 +29,18 @@ import Foundation
 /// ...
 public enum Expression<
     Value,
-    Check: Constraint,
     Let: Constant,
     Var: Variable,
     UnaryOp: UnaryOperator,
     BinaryOp: BinaryOperator
     where
-    Check.Value == Value,
     Let.Value == Value,
     Var.Value == Value,
     UnaryOp.Value == Value,
     BinaryOp.Value == Value>
 {
     /// ...
-    public typealias Argument = Expression<Value, Check, Let, Var, UnaryOp, BinaryOp>
+    public typealias Argument = Expression<Value, Let, Var, UnaryOp, BinaryOp>
     
     /// ...
     case constant(Let)
@@ -55,10 +53,10 @@ public enum Expression<
     
     /// ...
     indirect case unary(UnaryOp, Argument)
-
+    
     /// ...
     indirect case binary(BinaryOp, Argument, Argument)
-
+    
     /// ...
     public init(_ value: Value) {
         self = .value(value)
@@ -68,30 +66,38 @@ public enum Expression<
     public init(_ constant: Let) {
         self = .constant(constant)
     }
-
+    
     /// ...
     public init(_ variable: Var) {
         self = .variable(variable)
     }
     
     /// ...
-    public func evaluate(inside context: Context) -> Value {
-        let input: Value
+    public init(_ op: UnaryOp, _ arg: Argument) {
+        self = .unary(op, arg)
+    }
+
+    /// ...
+    public init(_ op: BinaryOp, _ arg1: Argument, _ arg2: Argument) {
+        self = .binary(op, arg1, arg2)
+    }
+
+    /// ...
+    public func evaluate<Ctx: Context>(inside context: Ctx) -> Value {
         switch self {
         case .constant(let c):
-            input = c.value
+            return c.value
         case .value(let v):
-            input = v
+            return v
         case .variable(let v):
-            input = v.evaluate(inside:context)
+            return v.evaluate(inside:context)
         case .unary(let op, let arg):
-            input = op.evaluate(input:arg.evaluate(inside:context))
+            return op.evaluate(input:arg.evaluate(inside:context))
         case .binary(let op, let arg1, let arg2):
             let lhs = arg1.evaluate(inside:context)
             let rhs = arg2.evaluate(inside:context)
-            input = op.evaluate(left:lhs, right:rhs)
+            return op.evaluate(left:lhs, right:rhs)
         }
-        return Check.constrain(input:input, inside:context)
     }
 }
 
@@ -115,100 +121,15 @@ extension Expression: CustomStringConvertible {
     }
 }
 
-///// ...
-//public enum Expression<T: Primitive> {
-//    
-//    /// ...
-//    case constant(T.Constant)
-//    
-//    /// ...
-//    case variable(T.Variable)
-//    
-//    /// ...
-//    indirect case unary(T.UnaryOperator, Expression<T>)
-//    
-//    /// ...
-//    indirect case binary(T.BinaryOperator, Expression<T>, Expression<T>)
-//    
-//    /// ...
-//    public init(_ value: T.Constant) {
-//        self = .constant(value)
-//    }
-//    
-//    /// ...
-//    public init(_ value: T.Constant.RawValue) {
-//        self = .constant(T.Constant(value))
-//    }
-//    
-//    /// ...
-//    public init(_ value: T.Variable) {
-//        self = .variable(value)
-//    }
-//    
-//    /// ...
-//    public init<RNG: RandomNumberGenerator>(random: inout RNG) {
-//        switch random.nextInt(lessThan:4) {
-//        case 0:
-//            self = .constant(T.Constant(random:&random))
-//        case 1:
-//            self = .variable(T.Variable(random:&random))
-//        case 2:
-//            self = .unary(T.UnaryOperator(random:&random), Expression(random:&random))
-//        case 3:
-//            self = .binary(T.BinaryOperator(random:&random),
-//                           Expression(random:&random),
-//                           Expression(random:&random))
-//        default:
-//            self = .constant(T.Constant(random:&random))
-//        }
-//    }
-//}
-//
-///// ...
-//extension Expression: CustomStringConvertible {
-//    
-//    /// ...
-//    public var description: String {
-//        switch self {
-//        case .constant(let c):
-//            return String(c)
-//        case .variable(let v):
-//            return String(v)
-//        case .unary(let op, let exp):
-//            return op.describe(expression:exp.description)
-//        case .binary(let op, let lhs, let rhs):
-//            return op.describe(lhs:lhs.description, rhs:rhs.description)
-//        }
-//    }
-//}
-//
-///// ...
-//extension Expression where
-//    T.Constant.RawValue == T.Variable.RawValue,
-//    T.Constant.RawValue == T.UnaryOperator.RawValue,
-//    T.Constant.RawValue == T.BinaryOperator.RawValue
-//{
-//    
-//    /// ...
-//    public typealias RawValue = T.Constant.RawValue
-//
-//    /// ...
-//    public func evaluate(inside context: Context) -> RawValue {
-//        switch self {
-//        case .constant(let c):
-//            return c.rawValue
-//        case .variable(let v):
-//            return v.evaluate(inside:context)
-//        case .unary(let op, let exp):
-//            let arg = exp.evaluate(inside:context)
-//            return op.evaluate(argument:arg)
-//        case .binary(let op, let lhs, let rhs):
-//            let arg1 = lhs.evaluate(inside:context)
-//            let arg2 = rhs.evaluate(inside:context)
-//            return op.evaluate(lhs:arg1, rhs:arg2)
-//        }
-//    }
-//}
+/// ...
+public typealias FloatingPointType = Double
+
+/// ...
+public typealias FloatingPointExpression = Expression<FloatingPointType, FloatingPointConstant, FloatingPointVariable, FloatingPointUnaryOperator, FloatingPointBinaryOperator>
+
+
+
+
 
 ///// ...
 //public func &&(lhs: BooleanOperator, rhs: BooleanOperator) -> BooleanOperator {

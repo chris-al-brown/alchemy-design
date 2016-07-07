@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		831401C11D2E8F95008E9951 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831401C01D2E8F95008E9951 /* Environment.swift */; };
 		831B29C61D2CFC4300D73C8A /* AlchemyColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 831B29B61D2CFC2E00D73C8A /* AlchemyColor.framework */; };
 		831B29C71D2CFC4300D73C8A /* AlchemyRandom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 831B29BF1D2CFC3600D73C8A /* AlchemyRandom.framework */; };
-		831B29C91D2D394F00D73C8A /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B29C81D2D394F00D73C8A /* Constraint.swift */; };
 		83BA3A541D2A5DA300563731 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA3A531D2A5DA300563731 /* Constant.swift */; };
 		83BA3A581D2A62B800563731 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA3A571D2A62B800563731 /* Expression.swift */; };
 		83BA3A5A1D2A62E700563731 /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA3A591D2A62E700563731 /* Variable.swift */; };
 		83BA3A5C1D2AA05400563731 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA3A5B1D2AA05400563731 /* Context.swift */; };
 		83BA3A5E1D2AA12000563731 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA3A5D1D2AA12000563731 /* Operator.swift */; };
-		83FAA1171D2AA90A00A75EDA /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FAA1161D2AA90A00A75EDA /* Geometry.swift */; };
+		83FAA1171D2AA90A00A75EDA /* Primitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FAA1161D2AA90A00A75EDA /* Primitive.swift */; };
 		83FAA11B1D2AA9F000A75EDA /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FAA11A1D2AA9F000A75EDA /* Renderer.swift */; };
 		_LinkFileRef_AlchemyDesign_via_AlchemyDesignTestSuite /* AlchemyDesign.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_AlchemyDesign" /* AlchemyDesign.framework */; };
 		__src_cc_ref_Tests/AlchemyDesign/AlchemyDesignTests.swift /* AlchemyDesignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Tests/AlchemyDesign/AlchemyDesignTests.swift /* AlchemyDesignTests.swift */; };
@@ -74,9 +74,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		831401C01D2E8F95008E9951 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = Sources/Environment.swift; sourceTree = "<group>"; };
 		831B29B01D2CFC2E00D73C8A /* AlchemyColor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AlchemyColor.xcodeproj; path = "Packages/AlchemyColor-0.2.1/AlchemyColor.xcodeproj"; sourceTree = "<group>"; };
 		831B29B91D2CFC3500D73C8A /* AlchemyRandom.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AlchemyRandom.xcodeproj; path = "Packages/AlchemyRandom-0.2.1/AlchemyRandom.xcodeproj"; sourceTree = "<group>"; };
-		831B29C81D2D394F00D73C8A /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Sources/Constraint.swift; sourceTree = "<group>"; };
 		8373107A1D26B1090003F9C6 /* Demo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Demo.playground; sourceTree = "<group>"; };
 		8373107B1D26B1090003F9C6 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		8373107C1D26B1090003F9C6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		83BA3A591D2A62E700563731 /* Variable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Variable.swift; path = Sources/Variable.swift; sourceTree = "<group>"; };
 		83BA3A5B1D2AA05400563731 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Context.swift; path = Sources/Context.swift; sourceTree = "<group>"; };
 		83BA3A5D1D2AA12000563731 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operator.swift; path = Sources/Operator.swift; sourceTree = "<group>"; };
-		83FAA1161D2AA90A00A75EDA /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Geometry.swift; path = Sources/Geometry.swift; sourceTree = "<group>"; };
+		83FAA1161D2AA90A00A75EDA /* Primitive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Primitive.swift; path = Sources/Primitive.swift; sourceTree = "<group>"; };
 		83FAA11A1D2AA9F000A75EDA /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Renderer.swift; path = Sources/Renderer.swift; sourceTree = "<group>"; };
 		__PBXFileRef_AlchemyDesign.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Project.xcconfig; path = AlchemyDesign.xcodeproj/Configs/Project.xcconfig; sourceTree = "<group>"; };
 		__PBXFileRef_AlchemyDesignTestSuite_Info.plist /* AlchemyDesignTestSuite_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = AlchemyDesignTestSuite_Info.plist; path = AlchemyDesign.xcodeproj/AlchemyDesignTestSuite_Info.plist; sourceTree = SOURCE_ROOT; };
@@ -214,11 +214,11 @@
 			isa = PBXGroup;
 			children = (
 				83BA3A531D2A5DA300563731 /* Constant.swift */,
-				831B29C81D2D394F00D73C8A /* Constraint.swift */,
 				83BA3A5B1D2AA05400563731 /* Context.swift */,
+				831401C01D2E8F95008E9951 /* Environment.swift */,
 				83BA3A571D2A62B800563731 /* Expression.swift */,
-				83FAA1161D2AA90A00A75EDA /* Geometry.swift */,
 				83BA3A5D1D2AA12000563731 /* Operator.swift */,
+				83FAA1161D2AA90A00A75EDA /* Primitive.swift */,
 				83FAA11A1D2AA9F000A75EDA /* Renderer.swift */,
 				83BA3A591D2A62E700563731 /* Variable.swift */,
 			);
@@ -352,10 +352,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				831B29C91D2D394F00D73C8A /* Constraint.swift in Sources */,
 				83FAA11B1D2AA9F000A75EDA /* Renderer.swift in Sources */,
 				83BA3A541D2A5DA300563731 /* Constant.swift in Sources */,
-				83FAA1171D2AA90A00A75EDA /* Geometry.swift in Sources */,
+				83FAA1171D2AA90A00A75EDA /* Primitive.swift in Sources */,
+				831401C11D2E8F95008E9951 /* Environment.swift in Sources */,
 				83BA3A5C1D2AA05400563731 /* Context.swift in Sources */,
 				83BA3A5E1D2AA12000563731 /* Operator.swift in Sources */,
 				83BA3A5A1D2A62E700563731 /* Variable.swift in Sources */,

@@ -30,26 +30,22 @@ import Foundation
 public protocol Context {
     
     /// ...
-    var minimumLength: Double { get }
-    
-    /// ...
-    var maximumLength: Double { get }
-    
-    /// ...
-    var minimumX: Double { get }
-
-    /// ...
-    var maximumX: Double { get }
-
-    /// ...
-    var minimumY: Double { get }
-
-    /// ...
-    var maximumY: Double { get }
-
-    /// ...
     var height: Double { get }
     
     /// ...
     var width: Double { get }
+}
+
+/// ...
+public final class CoreContext: Context {
+        
+    /// ...
+    public var height: Double {
+        return 480
+    }
+    
+    /// ...
+    public var width: Double {
+        return 640
+    }
 }

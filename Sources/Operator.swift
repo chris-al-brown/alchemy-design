@@ -28,10 +28,13 @@ import Foundation
 import AlchemyRandom
 
 /// ...
-public protocol BinaryOperator {
+public protocol BinaryOperator: Hashable {
 
     /// ...
     associatedtype Value
+
+    /// ...
+    static var allOperators: Set<Self> { get }
 
     /// ...
     func describe(left: String, right: String) -> String
@@ -41,10 +44,15 @@ public protocol BinaryOperator {
 }
 
 /// ...
-public enum DoubleBinaryOperator: BinaryOperator {
+public enum FloatingPointBinaryOperator: BinaryOperator {
 
     /// ...
-    public typealias Value = Double
+    public typealias Value = FloatingPointType
+
+    /// ...
+    public static var allOperators: Set<FloatingPointBinaryOperator> {
+        return [.add, .divide, .multiply, .subtract]
+    }
 
     /// ...
     case add
@@ -88,10 +96,13 @@ public enum DoubleBinaryOperator: BinaryOperator {
 }
 
 /// ... 
-public protocol UnaryOperator {
+public protocol UnaryOperator: Hashable {
     
     /// ...
     associatedtype Value
+    
+    /// ...
+    static var allOperators: Set<Self> { get }
     
     /// ...
     func describe(input: String) -> String
@@ -101,10 +112,15 @@ public protocol UnaryOperator {
 }
 
 /// ...
-public enum DoubleUnaryOperator: UnaryOperator {
+public enum FloatingPointUnaryOperator: UnaryOperator {
     
     /// ...
-    public typealias Value = Double
+    public typealias Value = FloatingPointType
+
+    /// ...
+    public static var allOperators: Set<FloatingPointUnaryOperator> {
+        return [.cosine, .exponentiation, .logarithm, .sine]
+    }
 
     /// ...
     case cosine
@@ -146,172 +162,3 @@ public enum DoubleUnaryOperator: UnaryOperator {
         }
     }
 }
-
-///// ...
-//public protocol BinaryOperatorProtocol {
-//    
-//    /// ...
-//    associatedtype RawValue
-//    
-//    /// ...
-//    init<RNG: RandomNumberGenerator>(random: inout RNG)
-//
-//    /// ...
-//    func describe(lhs: String, rhs: String) -> String
-//
-//    /// ...
-//    func evaluate(lhs: RawValue, rhs: RawValue) -> RawValue
-//}
-//
-///// ...
-//public protocol UnaryOperatorProtocol {
-//
-//    /// ...
-//    associatedtype RawValue
-//    
-//    /// ...
-//    init<RNG: RandomNumberGenerator>(random: inout RNG)
-//
-//    /// ...
-//    func describe(expression: String) -> String
-//    
-//    /// ...
-//    func evaluate(argument: RawValue) -> RawValue
-//}
-//
-///// ...
-//public enum FloatingPointBinaryOperator: BinaryOperatorProtocol {
-//    
-//    /// ...
-//    public typealias RawValue = Double
-//    
-//    /// ...
-//    case add
-//
-//    /// ...
-//    case divide
-//
-//    /// ...
-//    case multiply
-//
-//    /// ...
-//    case subtract
-//    
-//    /// ...
-//    public init<RNG: RandomNumberGenerator>(random: inout RNG) {
-//        switch random.nextInt(lessThan:4) {
-//        case 0:
-//            self = .add
-//        case 1:
-//            self = .divide
-//        case 2:
-//            self = .multiply
-//        case 3:
-//            self = .subtract
-//        default:
-//            self = .add
-//        }
-//    }
-//
-//    /// ...
-//    public func describe(lhs: String, rhs: String) -> String {
-//        switch self {
-//        case .add:
-//            return "(\(lhs) + \(rhs))"
-//        case .divide:
-//            return "(\(lhs) / \(rhs))"
-//        case .multiply:
-//            return "(\(lhs) * \(rhs))"
-//        case .subtract:
-//            return "(\(lhs) - \(rhs))"
-//        }
-//    }
-//
-//    /// ...
-//    public func evaluate(lhs: RawValue, rhs: RawValue) -> RawValue {
-//        switch self {
-//        case .add:
-//            return lhs + rhs
-//        case .divide:
-//            return lhs / rhs
-//        case .multiply:
-//            return lhs * rhs
-//        case .subtract:
-//            return lhs - rhs
-//        }
-//    }
-//}
-//
-///// ...
-//public enum FloatingPointUnaryOperator: UnaryOperatorProtocol {
-//    
-//    /// ...
-//    public typealias RawValue = Double
-//
-//    /// ...
-//    case cosine
-//
-//    /// ...
-//    case exponentiation
-//    
-//    /// ...
-//    case logarithm
-//    
-//    /// ...
-//    case sine
-//
-//    /// ...
-//    public init<RNG: RandomNumberGenerator>(random: inout RNG) {
-//        switch random.nextInt(lessThan:4) {
-//        case 0:
-//            self = .cosine
-//        case 1:
-//            self = .exponentiation
-//        case 2:
-//            self = .logarithm
-//        case 3:
-//            self = .sine
-//        default:
-//            self = .cosine
-//        }
-//    }
-//
-//    /// ...
-//    public func describe(expression: String) -> String {
-//        switch self {
-//        case .cosine:
-//            return "cos(\(expression))"
-//        case .exponentiation:
-//            return "exp(\(expression))"
-//        case .logarithm:
-//            return "log(\(expression))"
-//        case .sine:
-//            return "sin(\(expression))"
-//        }
-//    }
-//
-//    /// ...
-//    public func evaluate(argument: RawValue) -> RawValue {
-//        switch self {
-//        case .cosine:
-//            return Darwin.cos(argument)
-//        case .exponentiation:
-//            return Darwin.exp(argument)
-//        case .logarithm:
-//            return Darwin.log(argument)
-//        case .sine:
-//            return Darwin.sin(argument)
-//        }
-//    }
-//}
-
-
-
-
-
-
-
-
-
-
-
